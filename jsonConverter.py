@@ -10,11 +10,13 @@ def labelToJson(label):
 		json += '"x"' + ": " + '"' + str(vertex.x) + '"'
 		if(vertex.y):
 			json +=",\n" +  '"y"' + ": " + '"' + str(vertex.y) + '"' + "\n"
-
+          else:
+               json +=",\n" +  '"y"' + ": " + '"' + "0" + '"' + "\n"
 		json += "}"
 		json += ","
 
-	json = json[:-1]
+     if json[-1] == ",":
+          json = json[:-1]
 	json += "]" + "\n"
 	json += "}"
 	return json
